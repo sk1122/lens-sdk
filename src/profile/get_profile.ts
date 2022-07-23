@@ -18,6 +18,8 @@ export const get_profile_by_address = async (address: string): Promise<Profile |
 
 		const item = data.data.data.profiles.items[0]
 
+		if (!item) throw "can't find profile at " + address
+
 		let profile: Profile = {
 			id: item.id,
 			name: item.name,
@@ -37,7 +39,7 @@ export const get_profile_by_address = async (address: string): Promise<Profile |
 
 		return profile
 	} catch (e: any) {
-		console.log(e.response.data.errors)
+		console.log(e)
 	}
 }
 
@@ -56,6 +58,8 @@ export const get_profile_by_lens_id = async (lens_id: string): Promise<Profile |
 
 		const item = data.data.data.profile
 
+		if (!item) throw "can't find profile"
+
 		let profile: Profile = {
 			id: item.id,
 			name: item.name,
@@ -75,6 +79,6 @@ export const get_profile_by_lens_id = async (lens_id: string): Promise<Profile |
 
 		return profile
 	} catch (e: any) {
-		console.log(e.response.data.errors)
+		console.log(e)
 	}
 }

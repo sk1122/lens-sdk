@@ -6,7 +6,7 @@ import { AUTHENTICATION, VERIFY } from "./graphql_queries"
 export const authenticate = async (address: string, signature: string): Promise<AuthenticationTokens | any> => {
 	try {
 		const data = await axios.post(API_URL, {
-			mutation: AUTHENTICATION,
+			query: AUTHENTICATION,
 			variables: {
 				request: {
 					address,

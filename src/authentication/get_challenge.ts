@@ -18,6 +18,6 @@ export const get_challenge = async (address: string): Promise<ChallengeRequest |
 
 		return challenge
 	} catch (e: any) {
-		return e.response.data.errors
+		return e.response.data
 	}
 }
