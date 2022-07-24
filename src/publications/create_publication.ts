@@ -10,7 +10,6 @@ import { wait_for_tx } from "../transactions";
 
 export const create_publication = async (create_post_request: CreatePublicationParams, access_token: string, signer: ethers.Signer & TypedDataSigner) => {
 	try {
-
 		const data = await axios.post(API_URL, {
 			query: CREATE_POST_TYPED_DATA,
 			variables: {

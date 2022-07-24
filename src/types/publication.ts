@@ -150,3 +150,18 @@ export interface CreatePublicationParams {
 	collectModule: CollectModule,
 	referenceModule: { followerOnlyReferenceModule: boolean }
 }
+
+export enum PublicationType {
+	POST = "POST",
+	COMMENT = "COMMENT",
+	MIRROR = "MIRROR"
+}
+
+export interface GetPublicationsParams {
+	profileId?: string
+	publicationTypes?: PublicationType[]
+	sources?: string[]
+	commentsOf?: string
+	collectedBy?: string
+	publicationIds?: string[]
+}
