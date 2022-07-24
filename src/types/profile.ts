@@ -25,7 +25,21 @@ export interface Profile {
 		totalPublications: number,
 		totalCollects: number
 	},
-	followModule?: any
+	followModule?: {
+		type: string,
+		amount: {
+			asset: {
+				name: string,
+				symbol: string,
+				decimals: string,
+				address: string
+			},
+			value: string
+		},
+		recipient: string
+	},
+	isFollowedByMe?: boolean,
+	isFollowing?: boolean
 }
 
 export interface Followers {
